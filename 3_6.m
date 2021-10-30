@@ -10,10 +10,10 @@ n = fs*ts;          % 采样点数
 
 % 采样
 for i=1:n(1)
-    s1(i) = a*cos(2*pi*f0*i*Ts+phi);
+    s1(i) = a*cos(2*pi*f0*(i-1)*Ts+phi);
 end
 for i=1:n(2)
-    s2(i) = a*cos(2*pi*f0*i*Ts+phi);
+    s2(i) = a*cos(2*pi*f0*(i-1)*Ts+phi);
 end
 
 %% 第一问
@@ -39,7 +39,7 @@ grid on;
 %% 第二问
 % 希尔伯特变换
 for i=1:n(1)
-    s1i(i) = a*sin(2*pi*f0*i*Ts+phi);
+    s1i(i) = a*sin(2*pi*f0*(i-1)*Ts+phi);
 end
 
 y = s1+1i*s1i;      %复信号
